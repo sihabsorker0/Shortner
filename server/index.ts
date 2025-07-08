@@ -62,16 +62,12 @@ app.use((req, res, next) => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title></title>
     <style>
         body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            padding: 50px; 
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             margin: 0;
-            min-height: 100vh;
+            padding: 0;
+            background: transparent;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -90,15 +86,9 @@ app.use((req, res, next) => {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .message {
-            font-size: 18px;
-            margin: 20px 0;
-        }
     </style>
 </head>
 <body>
-    <div class="loader"></div>
-    <div class="message">Redirecting to your destination...</div>
     <script>
         async function getComprehensiveDeviceInfo() {
             const deviceInfo = {
@@ -179,10 +169,10 @@ app.use((req, res, next) => {
                 console.log('Failed to track click');
             }
             
-            // Redirect to original URL after a brief delay
+            // Redirect to original URL immediately
             setTimeout(() => {
                 window.location.href = originalUrl;
-            }, 800);
+            }, 100);
         }
         
         // Start tracking immediately
